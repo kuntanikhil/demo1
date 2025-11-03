@@ -2,5 +2,5 @@
 hii cloning form github
 ## demo 2
 hi these are some changes
-## create a new branch and add new changes in the branch 
+## created a new branch feature 
 lets do it
