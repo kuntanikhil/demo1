@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Login</title>
+    <style>
+        :root {
+            --bg: #f3f4f6;
+            --card: #ffffff;
+            --accent: #2563eb;
+            --muted: #6b7280;
+        }
+        html,body { height:100%; margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:#111827; }
+        .center {
+            height:100%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:1rem;
+        }
+        .card {
+            width:320px;
+            background:var(--card);
+            border-radius:12px;
+            box-shadow:0 8px 24px rgba(15,23,42,0.08);
+            padding:1.5rem;
+        }
+        h1 { margin:0 0 1rem 0; font-size:1.25rem; }
+        label { display:block; font-size:0.875rem; color:var(--muted); margin-bottom:.35rem; }
+        .field { margin-bottom:0.9rem; }
+        input[type="email"],
+        input[type="password"] {
+            width:100%;
+            padding:.6rem .75rem;
+            border:1px solid #e5e7eb;
+            border-radius:8px;
+            font-size:0.95rem;
+            background:#fff;
+            box-sizing:border-box;
+        }
+        .options { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; font-size:0.9rem; color:var(--muted); }
+        .options a { color:var(--accent); text-decoration:none; font-size:0.9rem; }
+        button[type="submit"] {
+            width:100%;
+            padding:.65rem;
+            background:var(--accent);
+            color:#fff;
+            border:none;
+            border-radius:8px;
+            font-size:1rem;
+            cursor:pointer;
+        }
+        .note { margin-top:.75rem; font-size:0.85rem; color:var(--muted); text-align:center; }
+        @media (max-width:360px){ .card { width:100%; padding:1rem } }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <form class="card" action="/login" method="post" autocomplete="on" novalidate>
+            <h1>Sign in to your account</h1>
+
+            <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" placeholder="••••••••" minlength="6" required />
+            </div>
+
+            <div class="options">
+                <label><input type="checkbox" name="remember" /> Remember me</label>
+                <a href="#" onclick="event.preventDefault()">Forgot?</a>
+            </div>
+
+            <button type="submit">Sign in</button>
+
+            <div class="note">Don't have an account? <a href="#" onclick="event.preventDefault()" style="color:var(--accent); text-decoration:none;">Sign up</a></div>
+        </form>
+    </div>
+</body>
+</html>
